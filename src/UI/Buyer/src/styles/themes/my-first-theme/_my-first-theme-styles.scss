@@ -3,3 +3,11 @@
 // overrides for bootstrap variables should be included in _override-bootstrap-variables.scss
 // custom (non-bootstrap) variables should be included in _themes.scss
 // --------------------------------------------------------------------------------------
+
+// default page heading
+.page-heading {
+    font-size: 2.5em;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  

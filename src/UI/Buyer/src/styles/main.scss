@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 
-// Abstracts
+// Abstracts - Custom Variables, Functions, Mixing declared globally
 @import
   'abstracts/variables',
   'abstracts/functions',
@@ -8,8 +8,8 @@
 
 // Theme Variables - must come before vendor
 @import
-  'themes/_override-bootstrap-variables',
-  'themes/_custom-variables';
+  'themes/_my-first-theme-variables',
+  'themes/_my-first-theme-custom-variables';
 
 // Vendors
 @import
@@ -44,6 +44,7 @@
 @import
   'pages/_home';
   
+// Platform-specific common styles
 @import
   '_shame';
 
@@ -53,5 +54,4 @@
 
 // Theme
   @import
-  'themes/default',
-  'themes/_theme';
+  'themes/_my-first-theme-styles';
