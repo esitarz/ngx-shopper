@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     private ocBuyerService: OcBuyerService,
     private toastrService: ToastrService,
     @Inject(applicationConfiguration) private appConfig: AppConfig
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.ocBuyerService.Get(this.appConfig.buyerID).subscribe((x) => {
@@ -84,7 +84,7 @@ export class HomeComponent implements OnInit {
     return (
       this.announcementForm &&
       this.announcementForm.value.announcement ===
-        _get(this.buyer, 'xp.Announcement', '')
+      _get(this.buyer, 'xp.Announcement', '')
     );
   }
 

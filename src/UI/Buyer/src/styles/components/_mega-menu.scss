@@ -1,0 +1,24 @@
+.navbar__megamenu {
+    z-index: 3;
+}
+
+ng-sidebar-container.megamenu {
+    overflow: initial;
+}
+
+.megamenu__dropdown-menu {
+    z-index: 2 !important;
+    background-color: $dark;
+    .nav {
+        .nav-item {
+            .nav-link {
+                color: $light;
+                transition: color .25s ease-in-out;
+                &:hover {
+                    color: $dark;
+                    background-color: $light;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.navbar__search {
+    @include media-breakpoint-up(sm) {
+        margin-right: 1rem;
+    }
+    [class*='-prepend'],
+    [class*='-append'] {
+        background-color: transparent;
+    }
+    .form-control {
+        background-color: transparent;
+        color: $light;
+        border: none;
+        border-bottom: 3px solid $secondary;
+        border-radius: 0;
+        transition: border-color .25s ease-in;
+        -webkit-appearance: textfield;
+        &:hover,
+        &:focus {
+            box-shadow: none;
+            border-color: $primary
+        }
+    }
+    .btn {
+        color: $secondary;
+        transition: color .25s ease-in;
+    }
+    &:hover,
+    &:focus,
+    &:active {
+        .btn {
+            color: $primary;
+        }
+    }
+}

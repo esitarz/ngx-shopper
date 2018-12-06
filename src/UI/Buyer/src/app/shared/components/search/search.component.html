@@ -4,9 +4,12 @@
          class="sr-only">{{placeholderText || 'Search...'}}</label>
   <div class="input-group">
     <div class="input-group-prepend">
-      <div class="input-group-text">
+      <button type="submit"
+              class="btn btn-link"
+              (click)="search()">
+        <span class="sr-only">Button To Submit Search</span>
         <fa-icon [icon]="faSearch"></fa-icon>
-      </div>
+      </button>
     </div>
     <input type="search"
            class="form-control"
@@ -17,10 +20,11 @@
            (keyup.enter)="search()">
     <div *ngIf="showClear()"
          class="input-group-append">
-      <div (click)="clear()"
-           class="input-group-text text-danger icon-button--hover-reactive">
-        <fa-icon [icon]="faTimes"></fa-icon>
-      </div>
+      <button (click)="clear()"
+              class="btn btn-link icon-button--hover-reactive">
+        <fa-icon class="text-danger"
+                 [icon]="faTimes"></fa-icon>
+      </button>
     </div>
   </div>
 </form>
