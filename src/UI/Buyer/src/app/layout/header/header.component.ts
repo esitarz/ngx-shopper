@@ -12,6 +12,8 @@ import {
   faUserCircle,
   faSignOutAlt,
   faHome,
+  faBars,
+  faCog
 } from '@fortawesome/free-solid-svg-icons';
 import { NgbPopover } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
@@ -45,6 +47,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   faSignOutAlt = faSignOutAlt;
   faUserCircle = faUserCircle;
   faHome = faHome;
+  faBars = faBars;
+  faCog = faCog;
+
+  private isSideBarOpen = false;
 
   constructor(
     private appStateService: AppStateService,
@@ -52,7 +58,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     @Inject(applicationConfiguration) protected appConfig: AppConfig
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.appStateService.orderSubject
@@ -62,6 +68,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.buildAddToCartListener();
     this.clearSearchOnNavigate();
   }
+
+  protected toggleSidebar() {
+    this.isSideBarOpen = !this.isSideBarOpen;
+  }
+
 
   isMobile(): boolean {
     return window.innerWidth < 768; // max width for bootstrap's sm breakpoint
@@ -76,7 +87,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
             event.LineItemId
               ? 'Qty Updated in the Cart'
               : 'Item(s) Added to Cart'
-          }`;
+            }`;
         }),
         delay(300),
         tap(() => {

@@ -7,9 +7,10 @@ import { FooterComponent } from '@app-buyer/layout/footer/footer.component';
 
 import { SharedModule } from '@app-buyer/shared';
 import { HomeComponent } from '@app-buyer/layout/home/home.component';
+import { SidebarModule } from 'ng-sidebar';
 
 @NgModule({
-  imports: [RouterModule, SharedModule],
+  imports: [RouterModule, SharedModule, SidebarModule.forRoot()],
   exports: [HeaderComponent, MainComponent, FooterComponent, HomeComponent],
   declarations: [
     HeaderComponent,
@@ -18,4 +19,4 @@ import { HomeComponent } from '@app-buyer/layout/home/home.component';
     HomeComponent,
   ],
 })
-export class LayoutModule {}
+export class LayoutModule { }

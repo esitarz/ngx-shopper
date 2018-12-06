@@ -1,8 +1,25 @@
  .badge__counter--large {
-    /deep/ .fa-layers-counter {
-        height: 1.5em;
-        top: -10px;
-        right: -12px;
-        font-size: 45px;
+     /deep/ .fa-layers-counter {
+         height: 1.5em;
+         top: -10px;
+         right: -12px;
+         font-size: 45px;
      }
+ }
+
+ .vh-50 {
+     height: 50vh;
+ }
+
+ .navbar-brand__img {
+     width: 50%;
+ }
+
+ .show .dropdown-menu--crazy-override {
+     display: flex;
+     flex-flow: column nowrap;
+     padding: 3rem 1.5rem;
+     left: -150px !important;
+     top: 56px !important;
+     border-radius: 0 0 .25rem .2rem;
  }

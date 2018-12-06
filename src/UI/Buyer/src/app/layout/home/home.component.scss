@@ -1,0 +1,25 @@
+@media (min-width: 768px) {
+    .grid-jumbotron {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "featured featured second" "featured featured third";
+        height: 91vh;
+    }
+}
+
+.carousel {
+    grid-area: featured;
+}
+
+.grid-jumbotron--second {
+    grid-area: second;
+    margin: 0;
+}
+
+.grid-jumbotron--third {
+    grid-area: third;
+}

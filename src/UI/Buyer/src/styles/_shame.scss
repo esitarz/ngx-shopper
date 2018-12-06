@@ -1,68 +1,205 @@
 html {
-  height: 100vh;
+    height: 100vh;
 }
 
 body {
-  padding-top: 120px;
-  min-height: 100vh;
+    min-height: 100vh;
 }
 
 .flex-1 {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
 }
 
 .mt-6 {
-  margin-top: 4.5rem;
+    margin-top: 4.5rem;
 }
 
 .flex-shrink-0 {
-  flex-shrink: 0;
+    flex-shrink: 0;
 }
 
 .c-error-message {
-  position: absolute;
-  z-index: 999;
-  padding: 0.5rem;
-  border-radius: $border-radius;
-  font-size: $small-font-size;
+    position: absolute;
+    z-index: 999;
+    padding: 0.5rem;
+    border-radius: $border-radius;
+    font-size: $small-font-size;
 }
 
 .border-hover {
-  transition: border-color 0.25s ease;
-
-  &:hover {
-    border: 1px solid $secondary;
-  }
+    transition: border-color 0.25s ease;
+    &:hover {
+        border: 1px solid $secondary;
+    }
 }
 
 .border-radius {
-  border-radius: $border-radius;
+    border-radius: $border-radius;
 }
 
 .ribbon.ribbon-top-right:after {
-  border-top-color: $ribbon-shadow-color;
-  border-left-color: $ribbon-shadow-color;
+    border-top-color: $ribbon-shadow-color;
+    border-left-color: $ribbon-shadow-color;
 }
 
 .cursor-pointer {
-  cursor: $custom-range-track-cursor;
+    cursor: $custom-range-track-cursor;
 }
 
 // this makes all address cards the same height
 shared-address-display {
-  display: flex;
-  flex: 1 1 auto;
-
-  .card {
-    @extend shared-address-display;
-  }
+    display: flex;
+    flex: 1 1 auto;
+    .card {
+        @extend shared-address-display;
+    }
 }
 
 .flex-none {
-  flex: none;
+    flex: none;
 }
 
 // Bootstrap IE issue with the last panel of ng-accordian
 .card-body#confirm {
-  flex:none;
+    flex: none;
+}
+
+.card {
+    border-radius: 0 !important;
+}
+
+// carousel noodlin'
+.carousel-inner {
+    height: 100%;
+    .carousel-item {
+        height: 100%;
+        & img {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+}
+
+// this removes one instance of a dropdown caret
+#settings-menu {
+    &.dropdown-toggle::after {
+        display: none;
+    }
+}
+
+.megans-menu {
+    border-radius: 0;
+    background-color: $primary;
+    padding: 2rem 1rem;
+    width: 100vw;
+    left: 0 !important;
+    top: 76px !important;
+}
+
+.carousel-control-next,
+.carousel-control-prev,
+.carousel-indicators {
+    display: none;
+}
+
+[class*="grid-jumbotron--"] {
+    background-size: cover;
+    background-position: center center;
+    color: $light;
+    padding: 0 4rem;
+    .hover-dot {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        background: $primary;
+        top: 70%;
+        right: 50%;
+        transform: translate(50%);
+        opacity: 0;
+        transition: opacity .5s ease-out;
+    }
+    &:hover {
+        .hover-dot {
+            opacity: .75;
+        }
+    }
+}
+
+.grid-jumbotron--second {
+    background-image: url('https://res.cloudinary.com/esitarz451/image/upload/v1544039440/square/square__stairs.jpg');
+}
+
+.grid-jumbotron--third {
+    background-image: url('https://res.cloudinary.com/esitarz451/image/upload/v1544038745/square/square__corner.jpg');
+}
+
+// dark mode 
+@media (prefers-color-scheme: dark) {
+    /* dark mode styles */
+}
+
+// cool toggle
+.toggle {
+    display: none;
+    +.btn-toggle {
+        outline: 0;
+        display: block;
+        width: 3em;
+        height: 1.5em;
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+        &:after,
+        &:before {
+            position: relative;
+            display: block;
+            content: "";
+            width: 45%;
+            height: 100%;
+            border-radius: 100px;
+        }
+        &:after {
+            left: 0;
+        }
+        &:before {
+            display: none;
+        }
+    }
+    &:checked+.btn-toggle:after {
+        left: 50%;
+    }
+}
+
+// themes
+.toggle-flat {
+    +.btn-toggle {
+        padding: 3px 6px;
+        transition: all .2s ease;
+        background: transparent;
+        border: 2px solid $secondary;
+        border-radius: 100px;
+        &:after {
+            transition: all .2s ease;
+            background: $secondary;
+            content: "";
+        }
+    }
+    &:checked+.btn-toggle {
+        border-color: $secondary;
+        &:after {
+            left: 60%;
+            background: $primary;
+        }
+    }
+}
+
+.navbar {
+    button {
+        transition: color .25s linear;
+        &:hover,
+        &:focus {
+            color: $primary;
+        }
+    }
 }

@@ -93,4 +93,4 @@ import { AppErrorHandler } from './config/error-handling.config';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -16,7 +16,7 @@ The following is a wish list of what I would like to add into the base app from 
 
 ## Login
 
-* I want 2 different layout options
+* 2 different layout options?
 
 ## Navbar
 
@@ -25,14 +25,16 @@ The following is a wish list of what I would like to add into the base app from 
         * https://www.skullcandy.com/
         * https://www.beatsbydre.com/ << Notice the hamburger account menu 
     2. Transparent header?
-    3. Minimalist Header
+    ~3. Minimalist Header~
     4. Toggle Dark Mode
     5. Similar UI from Desktop to Mobile? Full time hamburger?
-    6. Fullbleed Header
+    ~6. Fullbleed Header~
     7. FULLY ACCESSIBILE
-    8. Sticky header, NOT FIXED
+    ~8. UNFIXED header~
     9. Responsive Logo
     10. Right Slide minicart
+    11. https://www.npmjs.com/package/ng-sidebar >> installed but needs more setup
+    12. 
 
 ## Homepage
 

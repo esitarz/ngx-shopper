@@ -1,27 +1,45 @@
-<div class="container"
+<!-- Carousel slides can be managed in the seller application -->
+<div class="grid-jumbotron"
      *ngIf="buyerOrg$ | async; let buyer">
-
-  <!-- Announcements can be managed in the seller application  -->
-  <div *ngIf="buyer?.xp?.Announcement"
-       class="alert alert-info my-3"><b>
-      <fa-icon class="pr-3"
-               [icon]="faBullhorn"></fa-icon>
-    </b>{{ buyer?.xp?.Announcement }}</div>
-
-  <!-- Carousel slides can be managed in the seller application -->
   <ngb-carousel *ngIf="buyer?.xp?.carouselSlides">
     <ng-template ngbSlide
                  *ngFor="let slide of buyer.xp.carouselSlides">
       <img class="img-fluid"
            style="width:100%;"
-           [src]="slide.URL"
+           src="https://res.cloudinary.com/esitarz451/image/upload/v1543963875/carousel/carousel__building.jpg"
            alt="Random first slide">
+      <span class="hover-dot"></span>
       <div class="carousel-caption">
         <h3>{{ slide.headerText }}</h3>
         <p>{{ slide.bodyText }}</p>
       </div>
     </ng-template>
   </ngb-carousel>
+  <!-- Announcements can be managed in the seller application  -->
+
+  <div *ngIf="buyer?.xp?.Announcement"
+       class="card grid-jumbotron--second">
+    <span class="hover-dot"></span>
+    <div class="card-body flex-column d-flex justify-content-center text-center">
+      <fa-icon class="fa-3x"
+               [icon]="faBullhorn"></fa-icon>
+      <p>{{ buyer?.xp?.Announcement }}</p>
+    </div>
+  </div>
+
+  <div class="card grid-jumbotron--third bg-dark">
+    <div class="card-body flex-column d-flex align-items-center justify-content-center text-center">
+      <span class="hover-dot"></span>
+      <p class="text-light">test!</p>
+      <button class="btn btn-md btn-light px-4">Over Here!</button>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid"
+     *ngIf="buyerOrg$ | async; let buyer">
 
   <!-- Featured products can be managed in the seller application -->
   <div *ngIf="featuredProducts$ | async; let products">

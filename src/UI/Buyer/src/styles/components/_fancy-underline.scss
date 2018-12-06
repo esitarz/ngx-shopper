@@ -1,0 +1,34 @@
+.fancy-underline {
+    color: $dark;
+    border: none;
+    border-radius: 0;
+    position: relative;
+    text-decoration: none;
+  }
+  
+  /* The underline animation */
+  /* READ MORE: https://css-tricks.com/almanac/selectors/a/after-and-before/ */
+  
+  .fancy-underline:before {
+    content: '';
+    position: absolute;
+    left: 0; /* the position of the line */
+    width: 100%; /* width of the line */
+    height: 3px; /* how thick the line is */
+    bottom: 0px; /* the space between the text and the line */
+    background-color: $primary;
+    visibility: hidden; /* by default the underline is hidden*/
+    /*   The scaleX() CSS function defines a transformation that resizes an element along the x-axis (horizontally). Its result is a <transform-function> data type. */
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s; /*how fast the animation is*/
+  }
+  
+  .fancy-underline:hover:before,
+  .fancy-underline:focus:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1); /* width of the line. 1 is 100% */
+    transform: scaleX(1); /* width of the line. 1 is 100% */
+  }
+  
